@@ -1,0 +1,18 @@
+\def\note (#1) #2= #3\par{%
+  \expandafter\def\csname note #1\endcsname
+    {\footnote{\textit{#2}: #3}}}
+
+\note
+(genesis 1:2) Testing=
+This is a test of the \texttt{note} format: see \texttt{notes.tex}.
+In production, these notes will be automatically inserted where they
+are needed.
+
+\note
+(genesis 1:1) Small beginnings=
+Don't trim me.
+
+\note
+(exodus 1:1) Out of Egypt we go!=
+I don't have a body.
+
