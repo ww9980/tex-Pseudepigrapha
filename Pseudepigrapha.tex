@@ -1,0 +1,101 @@
+\documentclass[
+  twoside,
+%  draft,
+  ]{bible}
+
+\usepackage{metalogo} % For Xe(La)TeX Logos
+
+\usepackage{microtype}
+
+\usepackage[space]{xeCJK}
+
+\setCJKmainfont[
+  BoldFont={WenQuanYi Micro Hei},
+  ItalicFont={AR PL UKai CN}]
+{AR PL UMing CN}
+\setCJKsansfont{WenQuanYi Zen Hei}
+\setCJKmonofont{cwTeXFangSong}
+%\setCJKsansfont{WenQuanYi Micro Hei}
+\setmainfont{Georgia}
+
+\def\today
+\title{诸外经中文翻译集合}
+
+\renewcommand{\thefootnote}{\alph{footnote}}
+
+\def\usecs#1{\csname#1\endcsname}
+
+\setlength{\parindent}{1em}
+
+\BibleVersion{PBC}
+\begin{document}
+\NewSpeaker{\Father}{blue}{blue!50!black}
+\NewSpeaker{\Son}{red}{red!50!black}
+
+\input{hyphenations}
+
+%\input{notes}
+
+\null\vfil
+\centerline{诸外经中文翻译集合}
+\vfil
+%\testbook{old/genesis}
+
+\clearpage
+
+\onecolumn
+\thispagestyle{empty}
+\null\vfil
+\centerline{\Large 旧约相关外经诸书}
+\vfil
+\twocolumn
+
+%\InputOnlyBook{old/genesis}
+
+%\usecs{note genesis 1:1}
+%\usecs{note genesis 1:2}
+%\usecs{note genesis 3:16}
+%\usecs{note exodus 1:1}
+
+%\Huge
+
+
+\InputBook{name = 尼雅的儿子巴录的启示录，或巴录二书, toc-name = 巴录二书}{2B}
+
+
+\onecolumn
+\thispagestyle{empty}
+\null\vfil
+\centerline{\Large 新约相关外经诸书}
+\vfil
+\twocolumn
+
+%\InputBook{name = 尼雅的儿子巴录的启示录，或巴录二书, toc-name = 巴录二书}{2B}
+
+\backmatter\onecolumn
+% Need to make single column
+\ExplSyntaxOn
+\tl_new:N \bibleversion
+\tl_set_eq:NN \bibleversion \g_bible_version_tl
+\ExplSyntaxOff
+\include{\bibleversion/license-page}
+
+% colophon
+
+\newgeometry{centering,width=4in}
+
+\thispagestyle{empty}
+\null\vfil\noindent
+This King~James~Bible was typeset by \XeTeX\ (using the \XeLaTeX\ format) in
+6.64~seconds on a single thread of an Intel~\mbox{i7-3770K} running at
+$3.50\,\mathrm{GHz}$.  \XeLaTeX\ is based upon the original \TeX\
+typesetting system by Dr.~Donald~E.~Knuth and its extensions (\LaTeX)
+written by Leslie~Lamport.
+\vfil\vfil
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% TeX-engine: default
+%%% End:
